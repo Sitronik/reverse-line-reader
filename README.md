@@ -6,7 +6,7 @@ Asynchronous reverse line-by-line file reader. This started as a fork of Nick Ew
 Install
 -------
 
-`npm install reverse-line-reader`
+`npm install reverse-line-reader-size`
 
 Usage
 -----
@@ -16,7 +16,7 @@ the given callback function is called with two parameters: the line read and a
 boolean value specifying whether the line read was the last line of the file (on the top of the file).
 If the callback returns `false`, reading will stop.
 
-    var lineReader = require('reverse-line-reader');
+    var lineReader = require('reverse-line-reader-size');
 
     lineReader.eachLine('file.txt', function(line, last) {
       console.log(line);
@@ -29,7 +29,7 @@ If the callback returns `false`, reading will stop.
 `eachLine` can also be used in an asynchronous manner by providing a third
 callback parameter like so:
 
-    var lineReader = require('reverse-line-reader');
+    var lineReader = require('reverse-line-reader-size');
 
     lineReader.eachLine('file.txt', function(line, last, cb) {
       console.log(line);
@@ -44,7 +44,7 @@ callback parameter like so:
 The `eachLine` function also returns an object with one property, `then`.  If a
 callback is provided to `then`, it will be called once all lines have been read.
 
-    var lineReader = require('reverse-line-reader');
+    var lineReader = require('reverse-line-reader-size');
 
     // read all lines:
     lineReader.eachLine('file.txt', function(line) {
